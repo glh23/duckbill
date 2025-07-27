@@ -6,7 +6,7 @@ export default function CreateAccount() {
   const [form, setForm] = useState({ email: "", username: "", password: "" });
   const [message, setMessage] = useState("");
 
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const navigate = useNavigate();
 
@@ -14,6 +14,7 @@ export default function CreateAccount() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Handle register form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -45,6 +46,7 @@ export default function CreateAccount() {
 
 
     try {
+      // Send registration request
       const res = await fetch(`${apiUrl}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -12,12 +12,14 @@ This project uses Docker Compose to run the backend, frontend, and MongoDB servi
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/duckbill.git
+git https://github.com/glh23/duckbill.git
 cd duckbill
 ```
 
 ### Run the project
-
+Make sure you are in duckbill and then run:
 ```sh
 docker-compose down -v; docker-compose up -d --build
 ```
+
+## About

@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
+const argon2 = require('argon2');
 const validator = require('validator');
 const User = require('../models/user');
 
@@ -46,7 +46,7 @@ function validateRegistration({ unsanitizedEmail, unsanitizedUsername, password 
 }
 
 // Register route
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { email, username, password } = req.body;
 
@@ -64,15 +64,11 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Username or email already taken.' });
     }
 
-    // Hash password
-    const salt = await bcrypt.genSalt(12);
-    const passwordHash = await bcrypt.hash(password, salt);
-
     // Create new user
     const newUser = new User({
       email,
       username,
-      passwordHash,
+      password,
     });
 
     await newUser.save();

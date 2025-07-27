@@ -6,6 +6,10 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
+    navigate("/login");
+  }
+
+  const handleNavigate2 = () => {
     navigate("/create-account");
   }
 
@@ -29,6 +33,12 @@ export default function Home() {
                 <button
                   className="btn btn-primary"
                   onClick={() => handleNavigate()}
+                >
+                  Get Started
+                </button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleNavigate2()}
                 >
                   Get Started
                 </button>

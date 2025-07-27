@@ -1,6 +1,6 @@
 // models/User.js
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const argon2 = require('argon2');
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -23,11 +23,12 @@ const userSchema = new mongoose.Schema({
 
 // Hash password before saving
 userSchema.pre('save', async function(next) {
+  // Check if the password is modified
   if (!this.isModified('password')) return next();
 
   try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
+    // Hash the password using argon2
+    this.password = await argon2.hash(this.password);
     next();
   } catch (err) {
     next(err);
