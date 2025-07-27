@@ -14,3 +14,10 @@ This project uses Docker Compose to run the backend, frontend, and MongoDB servi
 ```sh
 git clone https://github.com/yourusername/duckbill.git
 cd duckbill
+```
+
+### Run the project
+
+```sh
+docker-compose down -v; docker-compose up -d --build
+```
