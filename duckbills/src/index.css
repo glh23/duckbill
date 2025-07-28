@@ -4,16 +4,15 @@
 
 html, body {
   transition-property: background-color, color, border-color, box-shadow;
-  transition-duration: 1s;
+  transition-duration: 350ms;
   transition-timing-function: ease-in-out;
 }
 
-
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Raleway', 'Roboto Slab', 'Lato', 'Segoe UI',
+    'Roboto', 'Oxygen', 'Merriweather', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
+    'Arial', 'compat', 'Montserrat', 'sans-serif', 'arial', 'source-sans-pro',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

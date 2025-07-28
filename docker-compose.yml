@@ -27,7 +27,7 @@ services:
       context: ./duckbills
       dockerfile: frontend.dockerfile
     ports:
-      - "3000:80"
+      - "3000:3000"
     env_file:
       - ./duckbills/.env
     depends_on:
